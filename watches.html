@@ -40,8 +40,8 @@
                     </a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
+                        <span class=""> </span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
@@ -73,6 +73,7 @@
             </div>
         </header>
         <!-- end header section -->
+       
     </div>
 
     <!-- shop section -->
@@ -82,20 +83,16 @@
             <div class="heading_container heading_center">
                 <h2>Latest Watches</h2>
             </div>
-            <div class="">
-                <div class="elementor-widget-container">
-                    <nav>
-                        <ul>
-                            <li class="menu-item current-menu-item menu-item-59810"><a href="#">Tất cả</a></li>
-                            <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Ultra</a></li>
-                            <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Series 8</a></li>
-                            <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Series 7</a></li>
-                            <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Series 6</a></li>
-                            <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch SE</a></li>
-                            <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Series 3</a></li>
-                        </ul>
-                    </nav>
-                </div>
+            <div class="" id="filter">
+                <ul data-filter="make" class="filter-make filter select-product">
+                    <li class="menu-item current-menu-item"><a href="#">Tất cả</a></li>
+                    <li data-filter="make" class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Ultra</a></li>
+                    <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Series 8</a></li>
+                    <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Series 7</a></li>
+                    <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Series 6</a></li>
+                    <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch SE</a></li>
+                    <li class="menu-item"><a href="#" class="elementor-item menu-link">Apple Watch Series 3</a></li>
+                </ul>
             </div>
             <div class="row" id="search">
                 <form id="search-form" action="" method="POST" enctype="multipart/form-data">
@@ -107,71 +104,28 @@
                     </div>
                 </form>
             </div>
-            <div class="row" id="filter">
-                <form>
-                    <div class="form-group col-sm-3 col-xs-6">
-                        <select data-filter="make" class="filter-make filter form-control">
-                <option value="">Select Make</option>
-                <option value="">Show All</option>
-              </select>
-                    </div>
-                    <div class="form-group col-sm-3 col-xs-6">
-                        <select data-filter="model" class="filter-model filter form-control">
-                <option value="">Select Model</option>
-                <option value="">Show All</option>
-              </select>
-                    </div>
-                    <div class="form-group col-sm-3 col-xs-6 box">
-                        <select data-filter="type" class="img-box filter-type filter form-control">
-                <option value="">Select Type</option>
-                <option value="">Show All</option>
-              </select>
-                    </div>
-                    <div class="form-group col-sm-3 col-xs-6">
-                        <select data-filter="price" class="filter-price filter form-control">
-                <option value="">Select Price Range</option>
-                <option value="">Show All</option>
-              </select>
-                    </div>
-                </form>
+            <div class="row" id="search-pro">
+                <div class=" col-sm-3 col-xs-6">
+                    <ul data-filter="make" class="filter-make filter ">
+                        <li><a value="" href="">Select Make</a> </li>
+                        <li><a value="" href="">Show All</a></li>
+                        <li><a value="" href="">Apple Watch Ultra</a></li>
+                        <li><a value="" href="">Apple Watch Series 8</a></li>
+                        <li><a value="" href="">Apple Watch Series 7</a></li>
+                        <li><a value="" href="">Apple Watch Series 6</a></li>
+                        <li><a value="" href="">Apple Watch SE</a></li>
+                        <li><a value="" href="">Apple Watch Series 3</a></li>
+                    </ul>
+                </div>
+                <div class="form-group col-sm-3 col-xs-6">
+                    <select data-filter="price" class="filter-price filter form-control">
+                        <option>Select Price Range</option>
+                        <option>Show All</option>
+                    </select>
+                </div>
+
             </div>
             <div class="row" id="products"></div>
-            <div class="row" id="filter">
-                <form action="">
-                    <div data-filter="type" class="filter col-sm-6 col-xl-3">
-                        <div class="box">
-                            <a href="">
-                                <div class="img-box">
-                                    <img src="images/w_4.png" alt="" />
-                                </div>
-                                <div class="detail-box">
-                                    <h6>Smartwatch</h6>
-                                    <h6>Price:<span> $125 </span></h6>
-                                </div>
-                                <div class="new">
-                                    <span>New</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div data-filter="type" class="filter col-sm-6 col-xl-3">
-                        <div class="box">
-                            <a href="">
-                                <div class="img-box">
-                                    <img src="images/w_4.png" alt="" />
-                                </div>
-                                <div class="detail-box">
-                                    <h6>Smartwatch</h6>
-                                    <h6>Price:<span> $125 </span></h6>
-                                </div>
-                                <div class="new">
-                                    <span>New</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </form>
-            </div>
             <div class="btn-box">
                 <a href=""> View All </a>
             </div>
@@ -234,13 +188,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 footer-col">
-                    <div class="map_container">
-                        <div class="map">
-                            <div id="googleMap"></div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="footer-info">
                 <p>
@@ -266,59 +214,53 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
     <!-- End Google Map -->
     <script>
+        
         var data = [{
-            make: "Gibson",
-            model: "Les Paul",
-            type: "Electric",
+            make: "Apple Watch Ultra",
             price: "$3,000",
-            image: "images/w_4.png",
+            image: "images/w_3.png",
         }, {
-            make: "Gibson",
-            model: "SG",
-            type: "Electric",
+            make: "Apple Watch Ultra",
             price: "$1,500",
             image: "images/w_3.png",
         }, {
             make: "Fender",
-            model: "Telecaster",
-            type: "Electric",
             price: "$2,000",
             image: "images/w_4.png",
         }, {
             make: "Fender",
-            model: "Stratocaster",
-            type: "Electric",
             price: "$2,000",
             image: "images/w_4.png",
         }, {
             make: "Gretsch",
-            model: "White Falcon",
-            type: "Electric",
             price: "$5,000",
-            image: "images/w_4.png",
+            image: "images/w_3.png",
         }, {
             make: "Paul Reed Smith",
-            model: "Custom 24",
-            type: "Electric",
             price: "$5,000",
-            image: "images/w_4.png",
+            image: "images/w_3.png",
         }, {
-            make: "Gibson",
-            model: "Hummingbird",
-            type: "Acoustic",
+            make: "Apple Watch Ultra",
             price: "$2,500",
             image: "images/w_4.png",
-        }, ];
+        }, {
+            make: "Apple Watch Ultra",
+            price: "$2,500",
+            image: "images/w_4.png",
+        },
+        {
+            make: "Apple Watch Ultra",
+            price: "$2,500",
+            image: "images/w_4.png",
+        },];
 
         var products = "",
-            makes = "",
-            models = "",
-            types = "";
+            prices = "",
+            makes = "";
+
 
         for (var i = 0; i < data.length; i++) {
             var make = data[i].make,
-                model = data[i].model,
-                type = data[i].type,
                 price = data[i].price,
                 rawPrice = price.replace("$", ""),
                 rawPrice = parseInt(rawPrice.replace(",", "")),
@@ -328,49 +270,31 @@
             products +=
                 "<div class='col-sm-4 product' data-make='" +
                 make +
-                "' data-model='" +
-                model +
-                "' data-type='" +
-                type +
                 "' data-price='" +
                 rawPrice +
-                "'><div class='product-inner text-center'><img src='" +
-                image +
-                "'><div class='detail-box'><h6>Make: " +
-                make +
-                "</h6><h6>Model: " +
-                model +
-                "<span>Type: " +
-                type +
-                "</span>Price: " +
-                price +
-                "</span></h6></div></div></div>";
+                "'><div class='product-inner text-center'><img src='"
+                + image +
+                "'><br />Make: "
+                + make +
+                "<br />Price: "
+                + price +
+                "</div></div>";
 
-            //create dropdown of makes
-            if (makes.indexOf("<option value='" + make + "'>" + make + "</option>") == -1) {
-                makes += "<option value='" + make + "'>" + make + "</option>";
-            }
-
-            //create dropdown of models
-            if (models.indexOf("<option value='" + model + "'>" + model + "</option>") == -1) {
-                models += "<option value='" + model + "'>" + model + "</option>";
-            }
-
-            //create dropdown of types
-            if (types.indexOf("<option value='" + type + "'>" + type + "</option>") == -1) {
-                types += "<option value='" + type + "'>" + type + "</option>";
-            }
+            // //create dropdown of makes
+            // if (makes.indexOf("<li><a href='' value='" + make + "'>" + make + "</a></li>") == -1) {
+            //     makes += "<li><a href='' value='" + make + "'>" + make + "</a></li>";
+            // }
         }
 
         $("#products").html(products);
         $(".filter-make").append(makes);
-        $(".filter-model").append(models);
-        $(".filter-type").append(types);
+        $(".filter-price").append(prices);
+
 
         var filtersObject = {};
 
         //on filter change
-        $(".filter").on("change", function() {
+        $(".filter").on("change", function () {
             var filterName = $(this).data("filter"),
                 filterVal = $(this).val();
 
@@ -397,17 +321,14 @@
         });
 
         //on search form submit
-        $("#search-form").submit(function(e) {
+        $("#search-form").submit(function (e) {
             e.preventDefault();
             var query = $("#search-form input").val().toLowerCase();
 
             $(".product").hide();
-            $(".product").each(function() {
-                var make = $(this).data("make").toLowerCase(),
-                    model = $(this).data("model").toLowerCase(),
-                    type = $(this).data("type").toLowerCase();
-
-                if (make.indexOf(query) > -1 || model.indexOf(query) > -1 || type.indexOf(query) > -1) {
+            $(".product").each(function () {
+                var make = $(this).data("make").toLowerCase();
+                if (make.indexOf(query) > -1) {
                     $(this).show();
                 }
             });

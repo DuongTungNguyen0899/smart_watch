@@ -10,11 +10,7 @@ $black2: #270808;
     font-family: "Poppins", sans-serif;
 }
 
-@mixin hero_btn($col1,
-$col2,
-$pad1,
-$pad2,
-$bRadius) {
+@mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
     display: inline-block;
     padding: $pad1 $pad2;
     background-color: $col1;
@@ -105,7 +101,6 @@ a:focus {
     outline: none !important;
     box-shadow: none;
 }
-
 
 /*header section*/
 
@@ -268,9 +263,7 @@ a:focus {
     }
 }
 
-
 /*end header section*/
-
 
 /* slider section */
 
@@ -296,7 +289,7 @@ a:focus {
             font-weight: bold;
             margin-bottom: 20px;
         }
-        p {}
+       
         .btn-box {
             display: flex;
             margin: 0 -5px;
@@ -334,6 +327,218 @@ a:focus {
                 background-color: $primary1;
             }
         }
+    }
+}
+
+.login-sig {
+    max-width: 600px;
+    margin: 0 auto;
+    .modal_close {
+        width: 36px;
+        height: 36px;
+        font-size: 30px;
+        background: #33333394;
+        color: #121010;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        border-radius: 30px;
+        float: right;
+        cursor: pointer;
+
+        a {
+            font-size: 22px;
+        }
+    }
+}
+
+$tablet: 768px;
+
+@mixin breakpoint($point) {
+    @if $point == untilTablet {
+        @media (max-width: $tablet - 1) {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media (min-width: $tablet) {
+            @content;
+        }
+    }
+}
+.box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 220px 20px 20px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+    top: -36px;
+    z-index: -1;
+
+    @include breakpoint(tablet) {
+        min-height: 400px;
+        padding: 0;
+
+        &__toggle:checked + &__image {
+            left: 300px;
+        }
+    }
+
+    @include breakpoint(untilTablet) {
+        &__toggle:checked {
+            ~ .form--register {
+                width: 100%;
+                height: auto;
+                opacity: 1;
+            }
+
+            ~ .form--login {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: 0 bottom;
+        transition: 0.4s ease-in-out;
+
+        @include breakpoint(tablet) {
+            width: 300px;
+            height: 100%;
+            object-position: 0 0;
+        }
+    }
+}
+
+.form {
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+    transition: 0.3s;
+
+    @include breakpoint(tablet) {
+        width: 300px;
+        padding: 0 20px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    &--login {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+
+    &--register {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+
+        @include breakpoint(tablet) {
+            width: 300px;
+            height: auto;
+            opacity: 1;
+        }
+    }
+
+    &__helper {
+        position: relative;
+        margin-bottom: 15px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        color: black;
+        font-family: "Lato", sans-serif;
+        font-size: 1.4rem;
+        transition: 0.3s;
+    }
+
+    &__input {
+        position: relative;
+        width: 100%;
+        padding: 5px 0;
+        color: black;
+        background-color: transparent;
+        border-width: 0;
+        border-bottom: 1px solid black;
+        outline: none;
+        font-family: "Lato", sans-serif;
+        font-size: 1.4rem;
+
+        &::placeholder {
+            opacity: 0;
+        }
+
+        &:not(:placeholder-shown) {
+            & + .form__label {
+                bottom: 25px;
+                color: #2e8e79;
+                font-size: 1.2rem;
+            }
+        }
+
+        &:focus {
+            border-bottom-color: #2e8e79;
+
+            & + .form__label {
+                bottom: 25px;
+                color: #2e8e79;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    &__button {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        color: white;
+        background-color: #2e8e79;
+        border: 0;
+        cursor: pointer;
+        font-family: "Lato", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        margin-top: 10px;
+        font-family: "Lato", sans-serif;
+        font-size: 1.4rem;
+    }
+
+    &__link {
+        color: #2e8e79;
+        cursor: pointer;
     }
 }
 
@@ -397,11 +602,7 @@ a:focus {
         justify-content: center;
         margin-top: 45px;
         a {
-            @include hero_btn($primary1,
-            $black2,
-            10px,
-            50px,
-            5px);
+            @include hero_btn($primary1, $black2, 10px, 50px, 5px);
         }
     }
     .product {
@@ -436,6 +637,19 @@ a:focus {
             }
         }
     }
+
+    .select-product {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        line-height: normal;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        flex-wrap: nowrap;
+    }
+    #search-form {
+        display: flex;
+    }
 }
 
 // end shop section
@@ -460,11 +674,7 @@ a:focus {
             margin-top: 15px;
         }
         a {
-            @include hero_btn($primary1,
-            $black2,
-            10px,
-            45px,
-            5px);
+            @include hero_btn($primary1, $black2, 10px, 45px, 5px);
             margin-top: 15px;
         }
     }
@@ -496,11 +706,7 @@ a:focus {
             color: #333;
         }
         a {
-            @include hero_btn($primary1,
-            $black2,
-            10px,
-            45px,
-            5px);
+            @include hero_btn($primary1, $black2, 10px, 45px, 5px);
             margin-top: 15px;
         }
         .heading_container {
@@ -563,11 +769,7 @@ a:focus {
         justify-content: center;
         margin-top: 45px;
         a {
-            @include hero_btn($primary1,
-            $black2,
-            10px,
-            45px,
-            5px);
+            @include hero_btn($primary1, $black2, 10px, 45px, 5px);
         }
     }
 }
@@ -601,11 +803,7 @@ a:focus {
     }
     button {
         @include main-font();
-        @include hero_btn($primary1,
-        $black2,
-        10px,
-        65px,
-        3px);
+        @include hero_btn($primary1, $black2, 10px, 65px, 3px);
         color: #fff;
         margin-top: 10px;
     }
@@ -752,11 +950,7 @@ a:focus {
         button {
             width: 100%;
             text-align: center;
-            @include hero_btn($primary1,
-            $black2,
-            10px,
-            55px,
-            5px);
+            @include hero_btn($primary1, $black2, 10px, 55px, 5px);
             margin-top: 15px;
         }
     }
