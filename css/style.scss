@@ -9,6 +9,163 @@ $black2: #270808;
 @mixin main-font {
     font-family: "Poppins", sans-serif;
 }
+@mixin media($width, $option: "min") {
+    @if $option == "min" {
+        @media screen and (min-width: #{$width}px) {
+            @content;
+        }
+    } @else if $option == "max" {
+        @media screen and (max-width: #{$width}px) {
+            @content;
+        }
+    }
+}
+$font-defalut: 16;
+@mixin font-size($font-size) {
+    font-size: #{$font-size}px;
+    font-size: #{$font-size/$font-defalut}rem;
+}
+
+// ---------------------------------------------SCROLL fllow ---------------------------------//
+
+#percentage-value {
+    color: #001793;
+    @include font-size(14);
+    line-height: 36px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #fff;
+    width: 38px;
+    height: 38px;
+    top: 2px;
+    left: 21px;
+    bottom: 50px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    @include media(1440) {
+        @include font-size(22);
+        top: 5px;
+        left: 35px;
+        width: 60px;
+        height: 60px;
+        line-height: 54px;
+    }
+}
+.circles-wrapper {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    bottom: 30px;
+    left: 10px;
+    z-index: 9;
+    @include media(1440) {
+        left: 30px;
+        margin-bottom: 0;
+        width: 60px;
+        height: 60px;
+    }
+}
+.circles-wrapper,
+.circle,
+.inner-circle,
+.mask-full {
+    border-radius: 1000px;
+}
+.circle,
+.inner-circle,
+.mask-full {
+    overflow: hidden;
+}
+.circle {
+    margin: auto;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    z-index: -1;
+    @include media(1440) {
+        width: 70px;
+        height: 70px;
+    }
+    &.is-active {
+        width: 42px;
+        height: 42px;
+        opacity: 1;
+        visibility: visible;
+        z-index: -1;
+        @include media(1440) {
+            width: 70px;
+            height: 70px;
+        }
+    }
+}
+.inner-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    border: 3px solid #e2b1c6;
+    @include media(1440) {
+        border: 6px solid #e2b1c6;
+    }
+}
+.mask-full {
+    content: "";
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 2px;
+    left: 2px;
+    z-index: 15;
+    background: #fff;
+    @include media(1440) {
+        width: 60px;
+        height: 60px;
+        background-size: auto 60px;
+        top: 5px;
+        left: 5px;
+    }
+}
+
+.mask-left,
+.mask-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 14;
+}
+.mask-left .fill,
+.mask-right .fill {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.05s linear;
+    background: #001793;
+}
+.mask-left {
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    .fill {
+        border-radius: 1000px 0 0 1000px;
+        transform-origin: 100% 50%;
+    }
+}
+.mask-right {
+    top: 0;
+    left: 50%;
+    .fill {
+        border-radius: 0 1000px 1000px 0;
+        transform-origin: 0 50%;
+    }
+}
 
 @mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
     display: inline-block;
@@ -289,7 +446,7 @@ a:focus {
             font-weight: bold;
             margin-bottom: 20px;
         }
-       
+
         .btn-box {
             display: flex;
             margin: 0 -5px;
@@ -357,9 +514,9 @@ $tablet: 768px;
 
 @mixin breakpoint($point) {
     @if $point == untilTablet {
-        @media (max-width: $tablet - 1) {
-            @content;
-        }
+        // @media (max-width: $tablet - 1) {
+        //     @content;
+        // }
     } @else if $point == tablet {
         @media (min-width: $tablet) {
             @content;
